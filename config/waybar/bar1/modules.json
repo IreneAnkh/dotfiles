@@ -1,0 +1,75 @@
+{
+
+  "group/left": {
+    "orientation": "horizontal",
+    "modules": [
+      "ext/workspaces" 
+    ]
+  },
+
+  "ext/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "one",
+      "2": "two",
+      "3": "three",
+      "4": "four",
+      "5": "five",
+      "6": "six",
+      "7": "seven",
+      "8": "eight",
+      "9": "nine"
+    },
+    "sort-by-id": true,
+    "on-click": "activate"
+  },
+
+  "mpris": {
+    "format": "{title} - {artist}",
+    "tooltip": false,
+    "title-len": 8,
+    "artist-len": 8,
+    "min-length": 10
+  },
+
+  "group/right": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/ctray",
+      "clock#time",
+      "clock#date" 
+    ]
+  },
+
+  "group/ctray": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
+
+    "modules": [
+      "custom/tray-wrapper",
+      "tray" 
+    ]
+  },
+
+  "custom/tray-wrapper": {
+    "format": "+",
+    "tooltip": false
+  },
+
+
+
+  "clock#time": {
+    "format": "{:%H:%M:%S}",
+    "tooltip": false,
+    "interval": 1
+  },
+
+  "clock#date": {
+    "format": "{:%d.%m.%Y}",
+    "tooltip": false
+  }
+}

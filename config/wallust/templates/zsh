@@ -1,0 +1,5 @@
+export COL1={{color1 | darken(0.3)}}
+export COL2={{color2}}
+export COL3={{color3 | darken(0.3)}}
+export COL4={{color4}}
+export COL5={{color5 | darken(0.3)}}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+WAYBAR_DIR="$HOME/.config/waybar/"
+
+FZFARGS='backspace:execute(waybarmenu)+abort,enter:execute-silent(cp -r "'"$WAYBAR_DIR"'"/{}/* "'"$WAYBAR_DIR"'"/ & pkill waybar && nohup waybar > /dev/null 2>&1 &)+abort'
+
+find "$WAYBAR_DIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort -d | fzf --height=100% --layout=reverse --list-label Themes --preview "" --no-input --cycle --bind "$FZFARGS"

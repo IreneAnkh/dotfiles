@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export PF_INFO="ascii title os host uptime pkgs"
+
+export PF_ASCII="penguim_fam"

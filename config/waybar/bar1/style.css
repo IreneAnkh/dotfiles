@@ -1,0 +1,76 @@
+@import url("colors.css") ;
+
+* {
+    font-family: "Go Mono", monospace;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: @fg;
+    background: @color8;
+    transition: 0.5s;
+}
+#workspaces button.active {
+    color: @fg;
+    background-color: @color6;
+
+}
+#workspaces button.hidden {
+    color: @fg;
+}
+#workspaces button.hidden.active {
+    color: @fg;
+
+}
+
+#workspaces button:hover {
+    background-color: @color5;
+}
+
+
+#mpris {
+    color: @fg;
+    background-color: @color8;
+    padding: 0 8px;
+    transition: 0.3s;
+}
+
+#mpris:hover {
+    background-color: @color6;
+}
+
+#mpris.paused {
+    color: @bg;
+    background-color: @color6;
+
+}
+
+
+#right {
+    color: @fg;
+    background-color: @color8;
+    padding: 0 8px;
+}
+
+#clock{
+    padding: 0 8px;
+}
+
+#tray {
+    background-color: transparent;
+    padding: 0 8px;
+}
+
+#custom-tray-wrapper:hover {
+    color: @color4;
+
+    transition: 0.5s
+}
+

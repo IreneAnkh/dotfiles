@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+
+FZFARGS='backspace:execute(menu.holder)+abort,enter:execute-silent(
+case {} in
+  play/pause)
+    playerctl play-pause
+  ;;
+  next)
+    playerctl next
+  ;;
+  previous)
+    playerctl previous
+  ;;
+esac
+)'
+
+
+printf '%s\n' 'play/pause' next previous | fzf --height=100% --layout=reverse --list-label Playerctl --preview "" --no-input --cycle --bind "$FZFARGS"
+

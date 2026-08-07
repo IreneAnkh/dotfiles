@@ -1,0 +1,18 @@
+{
+  "position": "top",
+  "layer": "top",
+  "height": "10",
+  "spacing": "4",
+
+  "modules-left": [ 
+    "group/left"
+  ],
+
+  "modules-right": [
+    "group/right"
+  ],
+
+  "include": [
+    "~/.config/waybar/modules.json"
+  ]
+}

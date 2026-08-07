@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+FZFARGS='ctrl-n:execute(setsid -f foot nvim {})+abort'
+
+output="$(find "$HOME/.config/scripts/" -type f ! -name "*.holder" | sort -d | fzf --height=100% --layout=reverse --list-label Menu --delimiter=/ --with-nth=-1 --preview "" --no-input --cycle --bind "$FZFARGS")" || exit
+
+case $output in
+  */waybarmenu | */playerc)
+    $output
+    ;;
+  *)
+    setsid -f foot -a menu $output
+    ;;
+esac

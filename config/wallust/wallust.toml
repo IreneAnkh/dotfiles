@@ -1,0 +1,23 @@
+backend = "fastresize"
+
+#threshold = "20" # neither about this, since I read wallust does it automagically..
+
+palette = "kmeans"
+style = "dark"
+use16cols = true
+
+check_contrast = true
+
+[templates]
+
+dunst = { template = "dunstrc", target = "~/.config/dunst/dunstrc" }
+
+zsh = { template = "zsh", target = "~/.config/zsh/colors"}
+
+waybar = { template = "waybar.css", target = "~/.config/waybar/colors.css" }
+
+mango = { template = "mango.conf", target = "~/.config/mango/color.conf" }
+
+foot = { template = "foot.ini", target = "~/.config/foot/colors.ini" }
+
+rofi = { template = "rofi.rasi", target = "~/.config/rofi/colors.rasi" }

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+FZFARGS='ctrl-r:execute-silent(echo {})'
+
+selected="$(find "$XDG_WALL_HOME" -type f | sort -d | fzf --height=100% --layout=reverse --list-label Walll --delimiter=/ --with-nth=-1 --preview 'fzf-preview.holder {}' --preview-window=right:60% --cycle --bind "$FZFARGS")"
+
+[[ -z "$selected" ]] && exit 0
+
+if [[ -n "$selected" ]]; then
+    wallust run "$selected" || exit 1
+    pkill -HUP dunst
+    killall -SIGUSR2 waybar
+    mmsg dispatch reload_config
+    awww img "$selected" --transition-type=fade --transition-fps=24
+    dunstify -a "$HOSTNAME" "Wallpaper Changed"
+fi

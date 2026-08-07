@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+src="${1:-.}"
+
+find "$src" | sort -d | \
+fzf \
+    --height=100% \
+    --layout=reverse \
+    --border \
+    --preview-border \
+    --delimiter=/ \
+    --with-nth=-1 \
+    --preview '~/scripts/fzf-preview.sh {}' \
+    --preview-window=right:60% \
+    --cycle

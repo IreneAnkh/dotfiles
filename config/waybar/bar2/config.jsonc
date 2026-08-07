@@ -1,0 +1,15 @@
+{
+  "position": "top",
+  "layer": "top",
+  "height": "5",
+  "width": "5",
+  "spacing": "0",
+
+  "modules-center": [ 
+    "group/middle"
+  ],
+
+  "include": [
+    "~/.config/waybar/modules.json"
+  ]
+}

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+FZFARGS='backspace:execute(menu.holder)+abort,enter:execute(
+  case {} in
+    open)
+      nohup waybar > /dev/null 2>&1 &
+      sleep 0.1
+      kill
+      clear
+    ;;
+    kill)
+      pkill waybar
+      clear
+    ;;
+    update)
+      kill -SIGUSR2 waybar 
+      clear
+      ;;
+    themes)
+      waybarthemes.holder
+      clear
+    ;;
+esac
+)'
+
+printf '%s\n' open 'kill' update themes | fzf --height=100% --layout=reverse --list-label Waybar --preview "" --no-input --cycle --bind "$FZFARGS"
